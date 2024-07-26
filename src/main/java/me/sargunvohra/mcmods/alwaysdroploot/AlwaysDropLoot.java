@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.gamerule.v1.rule.DoubleRule;
 import net.fabricmc.fabric.api.gamerule.v1.rule.EnumRule;
 import net.minecraft.world.level.GameRules;
+import net.fabricmc.api.ModInitializer;
 
 public class AlwaysDropLoot implements ModInitializer {
 

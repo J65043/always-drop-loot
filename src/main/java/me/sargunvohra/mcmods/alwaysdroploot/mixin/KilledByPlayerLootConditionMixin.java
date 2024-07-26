@@ -10,11 +10,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LootItemKilledByPlayerCondition.class)
 public class KilledByPlayerLootConditionMixin {
-
   @Inject(
     at = @At("RETURN"),
     method = "test(Lnet/minecraft/world/level/storage/loot/LootContext;)Z",
     cancellable = true
+
   )
   private void lootDropMode(
     LootContext lootContext,
@@ -26,6 +26,8 @@ public class KilledByPlayerLootConditionMixin {
         .getGameRules()
         .getRule(AlwaysDropLoot.LOOT_DROP_MODE)
         .get()
+
+
     ) {
       case VANILLA:
         break;
@@ -38,6 +40,8 @@ public class KilledByPlayerLootConditionMixin {
       case NEVER_AS_PLAYER:
         cir.setReturnValue(false);
         break;
+
     }
   }
 }
+

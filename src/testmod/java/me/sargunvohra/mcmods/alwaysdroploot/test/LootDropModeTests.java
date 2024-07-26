@@ -2,11 +2,19 @@ package me.sargunvohra.mcmods.alwaysdroploot.test;
 
 import me.sargunvohra.mcmods.alwaysdroploot.LootDropMode;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.damagesource.DamageSource;
+
+
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.GameType;
+
+
 
 public class LootDropModeTests {
 
@@ -25,7 +33,12 @@ public class LootDropModeTests {
     );
     var entity = helper.spawn(EntityType.BLAZE, 1, 2, 1);
     if (asPlayer) {
-      entity.hurt(DamageSource.playerAttack(helper.makeMockPlayer()), 1000f);
+
+      var damage = entity.damageSources().playerAttack(helper.makeMockPlayer(GameType.SURVIVAL));
+      entity.hurt(damage,1000f);
+
+
+
     } else {
       entity.kill();
     }
