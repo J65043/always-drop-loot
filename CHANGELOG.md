@@ -1,8 +1,8 @@
 # Changelog
 
-## Current
+## 5.2.0
 
-### Changes
+- Updated to MC 1.21
 
 ## 5.1.0
 
