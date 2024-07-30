@@ -11,14 +11,15 @@ public class TestUtil {
   public static void runCommand(GameTestHelper helper, String command) {
     var server = helper.getLevel().getServer();
 
-    CommandSourceStack commandsourcestack  = server.createCommandSourceStack();
-    CommandDispatcher<CommandSourceStack> commanddispatcher = server.getCommands().getDispatcher();
-    ParseResults<CommandSourceStack> results = commanddispatcher.parse(command,commandsourcestack);
+    CommandSourceStack commandsourcestack = server.createCommandSourceStack();
+    CommandDispatcher<CommandSourceStack> commanddispatcher = server
+      .getCommands()
+      .getDispatcher();
+    ParseResults<CommandSourceStack> results = commanddispatcher.parse(
+      command,
+      commandsourcestack
+    );
 
-
-    server.getCommands().performCommand(results,command);
-
-
-
+    server.getCommands().performCommand(results, command);
   }
 }

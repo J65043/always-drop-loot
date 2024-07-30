@@ -1,7 +1,7 @@
 package me.sargunvohra.mcmods.alwaysdroploot.test;
 
-import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.*;
+import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.entity.StructureBlockEntity;

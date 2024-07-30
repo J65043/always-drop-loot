@@ -1,16 +1,15 @@
 package me.sargunvohra.mcmods.alwaysdroploot.test;
 
 import net.minecraft.core.Holder;
+import net.minecraft.gametest.framework.*;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.gametest.framework.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.entity.StructureBlockEntity;
-
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -36,8 +35,10 @@ public class PassiveXpModifierTests {
     );
     var entity = helper.spawn(EntityType.CREEPER, 1, 2, 1);
     if (asPlayer) {
-      var damage = entity.damageSources().playerAttack(helper.makeMockPlayer(GameType.SURVIVAL));
-      entity.hurt(damage,1000f);
+      var damage = entity
+        .damageSources()
+        .playerAttack(helper.makeMockPlayer(GameType.SURVIVAL));
+      entity.hurt(damage, 1000f);
     } else {
       entity.kill();
     }
